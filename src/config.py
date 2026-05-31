@@ -9,22 +9,16 @@ OUTPUT_DIR = ROOT / "output"
 USER_AGENT = "timetracer-research/0.1 (competitive sentiment research)"
 
 SUBREDDITS = [
-    # Tier 1 — hourly billers
+    # Tier 1 — hourly billers & freelancers
     ("freelance", 1),
-    ("forhire", 1),
-    ("freelanceWritersForum", 1),
     ("Upwork", 1),
     ("freelancers", 1),
     ("digitalnomad", 1),
     ("consulting", 1),
-    # Tier 2 — tech contractors
+    # Tier 2 — tech contractors & entrepreneurs
     ("webdev", 2),
-    ("programming", 2),
-    ("cscareerquestions", 2),
-    ("ExperiencedDevs", 2),
-    ("devops", 2),
-    ("SideProject", 2),
     ("indiehackers", 2),
+    ("smallbusiness", 2),
 ]
 
 SEARCH_QUERIES = [
@@ -39,8 +33,8 @@ SEARCH_QUERIES = [
 ]
 
 # Per-subreddit ceilings
-MAX_THREADS_PER_SUBREDDIT = 50
-MAX_COMMENTS_PER_THREAD = 30
+MAX_THREADS_PER_SUBREDDIT = 20
+MAX_COMMENTS_PER_THREAD = 15
 
 # Relevance filter — at least one of these must appear in the thread
 RELEVANCE_KEYWORDS = [
@@ -67,7 +61,7 @@ HAIKU_MODEL = "claude-haiku-4-5-20251001"
 SONNET_MODEL = "claude-sonnet-4-6"
 
 # Discovery still uses an LLM to extract competitor names from threads.
-DISCOVERY_MODEL = SONNET_MODEL
+DISCOVERY_MODEL = HAIKU_MODEL
 
 # Local sentiment model (Hugging Face). Social-media-tuned RoBERTa with a native
 # 3-way head (negative / neutral / positive) — a much better fit for Reddit text
