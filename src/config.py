@@ -2,7 +2,7 @@
 
 from pathlib import Path
 
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).parent.parent
 CACHE_DIR = ROOT / "cache"
 OUTPUT_DIR = ROOT / "output"
 
